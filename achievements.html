@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Achievements | Wazmi Ali</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+            rel="stylesheet" />
+      <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+      <div class="loader" id="loader">
+            <div class="loader-ring"></div>
+            <p>Loading......</p>
+      </div>
+
+      <header class="topbar">
+            <nav class="navbar container">
+                  <a href="index.html" class="brand">Wazmi Ali<span>.</span></a>
+                  <span class="page-title" id="pageTitle">Achievements</span>
+                  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                        <span></span><span></span><span></span>
+                  </button>
+                  <div class="nav-menu" id="navMenu">
+                        <button id="navClose" class="nav-close" aria-label="Close navigation">×</button>
+                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="about.html" class="nav-link">About</a>
+                        <a href="projects.html" class="nav-link">Projects</a>
+                        <a href="achievements.html" class="nav-link active">Achievements</a>
+                        <a href="contact.html" class="nav-link">Contact</a>
+                  </div>
+                  <form class="search-form" id="searchForm">
+                        <input type="search" id="pageSearch" placeholder="Search this page..."
+                              aria-label="Search this page" />
+                        <button type="submit" class="btn btn-sm btn-primary">Go</button>
+                  </form>
+                  <div class="font-controls">
+                        <button id="fontDecrease" aria-label="Decrease font size">A-</button>
+                        <button id="fontIncrease" aria-label="Increase font size">A+</button>
+                  </div>
+                  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☾</button>
+            </nav>
+
+      </header>
+
+      <main>
+            <section class="section section-alt" id="achievements">
+                  <div class="container">
+                        <div class="section-header fade-up">
+                              <span class="section-tag">Achievements</span>
+                              <h2>Certificates & Recognitions</h2>
+                              <p>Showcasing my professional certifications, course completions, and academic
+                                    achievements that highlight my skills and dedication.</p>
+                        </div>
+                        <div class="achievements-grid" id="achievementsGrid">
+                              <article class="achievement-card">
+                                    <div class="achievement-thumb">
+                                          <img src="Image/Certificates/CCNA.jpg" alt="Certificate 1" />
+                                    </div>
+                                    <div class="achievement-body">
+                                          <h3>CCNA: Introduction to Networks</h3>
+                                          <p>Offered by G L Bajaj Institute of Technology and Management through the
+                                                Cisco Networking Academy program.</p>
+                                          <div class="achievement-date">Issued: Month Year</div>
+                                    </div>
+                              </article>
+                              <article class="achievement-card">
+                                    <div class="achievement-thumb">
+                                          <img src="Image/Certificates/network.jpg" alt="Certificate 2" />
+                                    </div>
+                                    <div class="achievement-body">
+                                          <h3>Networking Devices and Initial Configuration</h3>
+                                          <p>Offered by G L Bajaj Institute of Technology and Management through the
+                                                Cisco Networking Academy program.</p>
+                                          <div class="achievement-date">Issued: Month Year</div>
+                                    </div>
+                              </article>
+                              <article class="achievement-card">
+                                    <div class="achievement-thumb">
+                                          <img src="Image/Certificates/cyber.jpg" alt="Certificate 3" />
+                                    </div>
+                                    <div class="achievement-body">
+                                          <h3>Introduction to Cybersecurity</h3>
+                                          <p>Offered by G L Bajaj Institute of Technology and Management through the
+                                                Cisco Networking Academy program.</p>
+                                          <div class="achievement-date">Issued: Month Year</div>
+                                    </div>
+                              </article>
+                              <article class="achievement-card">
+                                    <div class="achievement-thumb">
+                                          <img src="Image/Certificates/python.jpg" alt="Certificate 4" />
+                                    </div>
+                                    <div class="achievement-body">
+                                          <h3>Python Essentials 1</h3>
+                                          <p>Offered by G L Bajaj Institute of Technology and Management through the
+                                                Cisco Networking Academy program.</p>
+                                          <div class="achievement-date">Issued: Month Year</div>
+                                    </div>
+                              </article>
+                        </div>
+                  </div>
+            </section>
+      </main>
+
+      <footer class="site-footer">
+            <div class="container footer-grid">
+                  <div class="footer-brand">
+                        <a href="index.html" class="brand">Wazmi Ali<span>.</span></a>
+                        <p>AI & ML student building modern web and cloud applications with polished UX.</p>
+                  </div>
+                  <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About</a>
+                        <a href="projects.html">Projects</a>
+                        <a href="achievements.html">Achievements</a>
+                        <a href="contact.html">Contact</a>
+                  </div>
+                  <div class="footer-contact">
+                        <p>📞 +91 9058XXXXXX</p>
+                        <p><a href="mailto:wazmiali9058@gmail.com">✉️ wazmiali9058@gmail.com</a></p>
+                        <p>📍 Greater Noida, UP, India</p>
+                  </div>
+            </div>
+            <p class="footer-copy">© 2026 Wazmi Ali. Designed for modern software and AI career growth.</p>
+      </footer>
+
+      <div class="chat-widget" id="chatWidget">
+            <button class="chat-toggle" id="chatToggle">Chat</button>
+            <div class="chat-panel" id="chatPanel">
+                  <div class="chat-header">
+                        <h3>Assistant</h3>
+                        <button id="chatClose">×</button>
+                  </div>
+                  <div class="chat-body" id="chatBody">
+                        <div class="chat-message bot">Hi! Ask me about the portfolio, skills, or projects.</div>
+                  </div>
+                  <div class="chat-input-row">
+                        <input type="text" id="chatInput" placeholder="Ask a question..." />
+                        <button id="chatSend">Send</button>
+                  </div>
+            </div>
+      </div>
+
+      <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+
+      <div class="nav-overlay" id="navOverlay"></div>
+
+      <div class="modal" id="certModal">
+            <div class="modal-content">
+                  <span class="close" id="closeModal">&times;</span>
+                  <img class="modal-img" id="modalImg" src="" alt="Certificate" />
+                  <button class="nav-btn prev" id="prevBtn">&#10094;</button>
+                  <button class="nav-btn next" id="nextBtn">&#10095;</button>
+            </div>
+      </div>
+
+      <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Projects | Wazmi Ali</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+            rel="stylesheet" />
+      <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+      <div class="loader" id="loader">
+            <div class="loader-ring"></div>
+            <p>Loading......</p>
+      </div>
+
+      <header class="topbar">
+            <nav class="navbar container">
+                  <a href="index.html" class="brand">Wazmi Ali<span>.</span></a>
+                  <span class="page-title" id="pageTitle">Projects</span>
+                  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                        <span></span><span></span><span></span>
+                  </button>
+                  <div class="nav-menu" id="navMenu">
+                        <button id="navClose" class="nav-close" aria-label="Close navigation">×</button>
+                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="about.html" class="nav-link">About</a>
+                        <a href="projects.html" class="nav-link active">Projects</a>
+                        <a href="achievements.html" class="nav-link">Achievements</a>
+                        <a href="contact.html" class="nav-link">Contact</a>
+                  </div>
+                  <form class="search-form" id="searchForm">
+                        <input type="search" id="pageSearch" placeholder="Search this page..."
+                              aria-label="Search this page" />
+                        <button type="submit" class="btn btn-sm btn-primary">Go</button>
+                  </form>
+                  <div class="font-controls">
+                        <button id="fontDecrease" aria-label="Decrease font size">A-</button>
+                        <button id="fontIncrease" aria-label="Increase font size">A+</button>
+                  </div>
+                  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☾</button>
+            </nav>
+      </header>
+
+      <main>
+            <section class="section section-alt" id="projects">
+                  <div class="container">
+                        <div class="section-header fade-up">
+                              <span class="section-tag">Projects</span>
+                              <h2>Featured Work</h2>
+                              <p>Interactive applications and AI-driven systems built with modern interfaces and
+                                    polished responsiveness.</p>
+                        </div>
+                        <div class="github-work-card fade-up delay-1">
+                              <div class="github-work-copy">
+                                    <h3>Full portfolio on GitHub</h3>
+                                    <p>All my projects, source code, documentation, and development notes are available
+                                          at
+                                          <a href="https://github.com/wazmiali" target="_blank"
+                                                rel="noreferrer">github.com/wazmiali</a>.
+                                          Explore every repository, programming language icon, and real work sample from
+                                          my software journey.
+                                    </p>
+                                    <div class="lang-badges">
+                                          <span>🐍 Python</span>
+                                          <span>🟦 JavaScript</span>
+                                          <span>🌐 HTML</span>
+                                          <span>🎨 CSS</span>
+                                          <span>🐘 PHP</span>
+                                          <span>🐬 MySQL</span>
+                                          <span>☁️ Flask</span>
+                                          <span>📊 Pandas</span>
+                                    </div>
+                              </div>
+                        </div>
+                        <div class="project-filter fade-up delay-1" id="projectFilter">
+                              <button class="filter-btn active" data-filter="all">All</button>
+                              <button class="filter-btn" data-filter="web">Web</button>
+                              <button class="filter-btn" data-filter="app">App</button>
+                              <button class="filter-btn" data-filter="ai">AI</button>
+                        </div>
+                        <div class="project-grid" id="projectGrid">
+                              <article class="project-card" data-category="ai">
+                                    <div class="project-thumb"></div>
+                                    <div class="project-body">
+                                          <h3>Heart Disease Predictor</h3>
+                                          <p>A healthcare prediction platform built with Flask and machine learning to
+                                                estimate cardiovascular risk using patient metrics, feature engineering,
+                                                and model explainability.</p>
+                                          <div class="project-tech-icons">
+                                                <span>🐍 Python</span>
+                                                <span>☁️ Flask</span>
+                                                <span>📊 Scikit-learn</span>
+                                                <span>📈 Pandas</span>
+                                                <span>🎨 Bootstrap</span>
+                                          </div>
+                                          <div class="tech-stack">Python · Flask · Scikit-learn · Pandas · Bootstrap
+                                          </div>
+                                          <div class="project-actions">
+                                                <a href="https://github.com/wazmiali/Heart-Disease-Detection-System"
+                                                      target="_blank" class="btn btn-sm">View GitHub</a>
+                                                <button class="read-more-btn btn btn-sm btn-outline">Read More</button>
+                                          </div>
+                                          <div class="project-more" style="display: none;">
+                                                <p><strong>🫀 Heart Disease Detection System</strong><br>
+                                                      This project aims to predict the likelihood of heart disease using
+                                                      machine learning techniques. The system processes medical data
+                                                      such as age, gender, smoking habits, blood pressure, cholesterol
+                                                      levels, and other clinical parameters to generate a risk
+                                                      prediction. It provides a user-friendly interface where users can
+                                                      input health details and instantly get a prediction result.</p>
+
+                                                <p><strong>🚀 Features</strong><br>
+                                                      Machine learning model trained on real medical dataset<br>
+                                                      Preprocessing using data scaling and normalization<br>
+                                                      Heart disease prediction with high accuracy<br>
+                                                      Web-based UI form for entering patient data<br>
+                                                      Flask backend for model inference<br>
+                                                      Display of prediction results with clear medical interpretation
+                                                </p>
+
+                                                <p><strong>🧠 Technologies Used</strong><br>
+                                                      Python<br>
+                                                      Flask<br>
+                                                      Scikit-learn<br>
+                                                      NumPy & Pandas<br>
+                                                      HTML / CSS / Bootstrap (Front-end)<br>
+                                                      Pickle (Model serialization)</p>
+
+                                                <p><strong>📂 Project Structure</strong><br>
+                                                      📁 heart-disease-detection/<br>
+                                                      │── app.py<br>
+                                                      │── rf_classifier.pkl<br>
+                                                      │── scaler.pkl<br>
+                                                      │── templates/<br>
+                                                      │ ├── index.html<br>
+                                                      │ ├── result.html<br>
+                                                      │── static/<br>
+                                                      │ ├── styles.css<br>
+                                                      │── requirements.txt<br>
+                                                      │── README.md<br>
+                                                      │── dataset.csv</p>
+
+                                                <p><strong>🔧 How It Works</strong><br>
+                                                      User enters medical parameters in the form<br>
+                                                      Data is preprocessed using a saved scaler<br>
+                                                      Trained model predicts heart disease risk<br>
+                                                      Result is displayed in a readable format</p>
+
+                                                <p><strong>📊 Model</strong><br>
+                                                      The model uses supervised machine learning techniques such as:<br>
+                                                      Random Forest Classifier<br>
+                                                      Logistic Regression (optional)<br>
+                                                      Train/test split evaluation</p>
+
+                                                <p><strong>💡 Use Cases</strong><br>
+                                                      Preventive healthcare<br>
+                                                      Risk assessment for cardiovascular patients<br>
+                                                      Medical research & decision support</p>
+
+                                                <p><strong>📌 Future Enhancements</strong><br>
+                                                      Add data visualization dashboard<br>
+                                                      Deploy on cloud (Heroku / Render / AWS)<br>
+                                                      Add mobile app interface<br>
+                                                      Improve accuracy with deep learning</p>
+                                          </div>
+                                    </div>
+                              </article>
+                              <article class="project-card" data-category="ai">
+                                    <div class="project-thumb"></div>
+                                    <div class="project-body">
+                                          <h3>Dataset Visualizer</h3>
+                                          <p>An interactive analytics tool for exploring CSV datasets with charts,
+                                                filters, and summary statistics to support data-driven decisions.</p>
+                                          <div class="project-tech-icons">
+                                                <span>🐍 Python</span>
+                                                <span>📊 Pandas</span>
+                                                <span>📈 Matplotlib</span>
+                                                <span>📊 Seaborn</span>
+                                                <span>🚀 Streamlit</span>
+                                          </div>
+                                          <div class="tech-stack">Python · Pandas · Matplotlib · Seaborn · Streamlit
+                                          </div>
+                                          <div class="project-actions">
+                                                <a href="https://github.com/wazmiali/College-Coding" target="_blank"
+                                                      class="btn btn-sm">View GitHub</a>
+                                                <button class="read-more-btn btn btn-sm btn-outline">Read More</button>
+                                          </div>
+                                          <div class="project-more" style="display: none;">
+                                                <p>This interactive tool allows users to upload CSV files and generate
+                                                      various visualizations including histograms, scatter plots, and
+                                                      correlation matrices. Built with Streamlit for easy deployment and
+                                                      Pandas for data manipulation.</p>
+                                          </div>
+                                    </div>
+                              </article>
+                              <article class="project-card" data-category="web">
+                                    <div class="project-thumb"></div>
+                                    <div class="project-body">
+                                          <h3>Hospital Management System</h3>
+                                          <p>A responsive hospital admin portal with patient records, appointment
+                                                workflow, and billing management built for usability in clinical
+                                                environments.</p>
+                                          <div class="project-tech-icons">
+                                                <span>🌐 HTML</span>
+                                                <span>🎨 CSS</span>
+                                                <span>🟦 JavaScript</span>
+                                                <span>🐘 PHP</span>
+                                                <span>🐬 MySQL</span>
+                                          </div>
+                                          <div class="tech-stack">HTML · CSS · JavaScript · PHP · MySQL</div>
+                                          <div class="project-actions">
+                                                <a href="https://github.com/wazmiali/Hospital-Website-" target="_blank"
+                                                      class="btn btn-sm">View GitHub</a>
+                                                <button class="read-more-btn btn btn-sm btn-outline">Read More</button>
+                                          </div>
+                                          <div class="project-more" style="display: none;">
+                                                <p>A comprehensive hospital management system with user authentication,
+                                                      patient registration, appointment scheduling, billing, and admin
+                                                      dashboard. Uses PHP for backend logic and MySQL for data storage.
+                                                </p>
+                                          </div>
+                                    </div>
+                              </article>
+                              <article class="project-card" data-category="web">
+                                    <div class="project-thumb"></div>
+                                    <div class="project-body">
+                                          <h3>Smart Waste Management</h3>
+                                          <p>A service portal for citizens and staff to manage waste pickup, request
+                                                routes, and monitor collection status with an organized dashboard
+                                                experience.</p>
+                                          <div class="project-tech-icons">
+                                                <span>🌐 HTML</span>
+                                                <span>🎨 CSS</span>
+                                                <span>🟦 JavaScript</span>
+                                                <span>🐘 PHP</span>
+                                                <span>🐬 MySQL</span>
+                                          </div>
+                                          <div class="tech-stack">HTML · CSS · JavaScript · PHP · MySQL · Bootstrap
+                                          </div>
+                                          <div class="project-actions">
+                                                <a href="https://github.com/wazmiali/Smart-Waste-Management"
+                                                      target="_blank" class="btn btn-sm">View GitHub</a>
+                                                <button class="read-more-btn btn btn-sm btn-outline">Read More</button>
+                                          </div>
+                                          <div class="project-more" style="display: none;">
+                                                <p>A waste management portal for tracking collection schedules,
+                                                      reporting issues, and managing routes. Includes user dashboards
+                                                      for citizens and admins, with Bootstrap for responsive design and
+                                                      PHP/MySQL for backend.</p>
+                                          </div>
+                                    </div>
+                              </article>
+                              <article class="project-card" data-category="ai">
+                                    <div class="project-thumb"></div>
+                                    <div class="project-body">
+                                          <h3>Data Structure & Algo Practice</h3>
+                                          <p>A repository for daily DSA practice with C++, including algorithms, data
+                                                structures, and problem-solving exercises from LeetCode and other
+                                                platforms.</p>
+                                          <div class="project-tech-icons">
+                                                <span>🔵 C++</span>
+                                                <span>📚 Algorithms</span>
+                                          </div>
+                                          <div class="tech-stack">C++ · Data Structures · Algorithms</div>
+                                          <div class="project-actions">
+                                                <a href="https://github.com/wazmiali/Data-Structure-Algo-Practice"
+                                                      target="_blank" class="btn btn-sm">View GitHub</a>
+                                                <button class="read-more-btn btn btn-sm btn-outline">Read More</button>
+                                          </div>
+                                          <div class="project-more" style="display: none;">
+                                                <p>This repo contains implementations of various data structures like
+                                                      arrays, linked lists, stacks, queues, trees, and graphs, along
+                                                      with sorting and searching algorithms. Includes daily commits and
+                                                      DevOps workflow testing.</p>
+                                          </div>
+                                    </div>
+                              </article>
+                              <article class="project-card" data-category="ai">
+                                    <div class="project-thumb"></div>
+                                    <div class="project-body">
+                                          <h3>DSA With C++</h3>
+                                          <p>Technical training repository for Data Structures and Algorithms using C++,
+                                                covering fundamental concepts and advanced topics.</p>
+                                          <div class="project-tech-icons">
+                                                <span>🔵 C++</span>
+                                                <span>📚 DSA</span>
+                                          </div>
+                                          <div class="tech-stack">C++ · Data Structures · Algorithms</div>
+                                          <div class="project-actions">
+                                                <a href="https://github.com/wazmiali/DSA-With-Cpp" target="_blank"
+                                                      class="btn btn-sm">View GitHub</a>
+                                                <button class="read-more-btn btn btn-sm btn-outline">Read More</button>
+                                          </div>
+                                          <div class="project-more" style="display: none;">
+                                                <p>Comprehensive collection of DSA problems and solutions, including
+                                                      arrays, strings, dynamic programming, graph algorithms, and
+                                                      competitive programming challenges.</p>
+                                          </div>
+                                    </div>
+                              </article>
+                              <article class="project-card" data-category="ai">
+                                    <div class="project-thumb"></div>
+                                    <div class="project-body">
+                                          <h3>Rock Mine Project</h3>
+                                          <p>Machine learning project for classifying sonar signals to distinguish
+                                                between rocks and mines using Python and ML algorithms.</p>
+                                          <div class="project-tech-icons">
+                                                <span>🐍 Python</span>
+                                                <span>🤖 Machine Learning</span>
+                                                <span>📊 Scikit-learn</span>
+                                          </div>
+                                          <div class="tech-stack">Python · Scikit-learn · Jupyter Notebook</div>
+                                          <div class="project-actions">
+                                                <a href="https://github.com/wazmiali/Rock-Mine-Project" target="_blank"
+                                                      class="btn btn-sm">View GitHub</a>
+                                                <button class="read-more-btn btn btn-sm btn-outline">Read More</button>
+                                          </div>
+                                          <div class="project-more" style="display: none;">
+                                                <p>Uses sonar data to train classification models. Includes data
+                                                      preprocessing, feature selection, model training with algorithms
+                                                      like SVM and Neural Networks, and evaluation metrics.</p>
+                                          </div>
+                                    </div>
+                              </article>
+                              <article class="project-card" data-category="web">
+                                    <div class="project-thumb"></div>
+                                    <div class="project-body">
+                                          <h3>MedSenseLab.com</h3>
+                                          <p>Official website for the Medical Sensing Laboratory at IIT Jammu,
+                                                showcasing research, projects, and team information.</p>
+                                          <div class="project-tech-icons">
+                                                <span>🌐 HTML</span>
+                                                <span>🎨 CSS</span>
+                                                <span>🟦 JavaScript</span>
+                                          </div>
+                                          <div class="tech-stack">HTML · CSS · JavaScript</div>
+                                          <div class="project-actions">
+                                                <a href="https://github.com/wazmiali/MedSenselab.com" target="_blank"
+                                                      class="btn btn-sm">View GitHub</a>
+                                                <button class="read-more-btn btn btn-sm btn-outline">Read More</button>
+                                          </div>
+                                          <div class="project-more" style="display: none;">
+                                                <p>A responsive website built for academic research lab, featuring
+                                                      project galleries, team profiles, publications, and contact
+                                                      information with modern web design.</p>
+                                          </div>
+                                    </div>
+                              </article>
+                        </div>
+                  </div>
+            </section>
+      </main>
+
+      <footer class="site-footer">
+            <div class="container footer-grid">
+                  <div class="footer-brand">
+                        <a href="index.html" class="brand">Wazmi Ali<span>.</span></a>
+                        <p>AI & ML student building modern web and cloud applications with polished UX.</p>
+                  </div>
+                  <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About</a>
+                        <a href="projects.html">Projects</a>
+                        <a href="achievements.html">Achievements</a>
+                        <a href="contact.html">Contact</a>
+                  </div>
+                  <div class="footer-contact">
+                        <p>📞 +91 9058XXXXXX</p>
+                        <p><a href="mailto:wazmiali9058@gmail.com">✉️ wazmiali9058@gmail.com</a></p>
+                        <p>📍 Greater Noida, UP, India</p>
+                  </div>
+            </div>
+            <p class="footer-copy">© 2026 Wazmi Ali. Designed for modern software and AI career growth.</p>
+      </footer>
+
+      <div class="chat-widget" id="chatWidget">
+            <button class="chat-toggle" id="chatToggle">Chat</button>
+            <div class="chat-panel" id="chatPanel">
+                  <div class="chat-header">
+                        <h3>Assistant</h3>
+                        <button id="chatClose">×</button>
+                  </div>
+                  <div class="chat-body" id="chatBody">
+                        <div class="chat-message bot">Hi! Ask me about the portfolio, skills, or projects.</div>
+                  </div>
+                  <div class="chat-input-row">
+                        <input type="text" id="chatInput" placeholder="Ask a question..." />
+                        <button id="chatSend">Send</button>
+                  </div>
+            </div>
+      </div>
+
+      <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+
+      <div class="nav-overlay" id="navOverlay"></div>
+
+      <script src="script.js"></script>
+</body>
+
+</html>
