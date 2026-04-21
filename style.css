@@ -12,6 +12,12 @@
       --radius: 28px;
 }
 
+*,
+*::before,
+*::after {
+      box-sizing: border-box;
+}
+
 body {
       margin: 0;
       min-height: 100vh;
@@ -126,6 +132,7 @@ textarea {
       gap: 1rem;
       flex-wrap: wrap;
       justify-content: space-between;
+      min-width: 0;
 }
 
 .nav-menu {
@@ -203,6 +210,9 @@ textarea {
       color: var(--muted);
       position: relative;
       transition: color 0.25s ease;
+      display: block;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
 }
 
 .nav-link::after {
@@ -288,6 +298,7 @@ textarea {
 
 .hero-copy {
       max-width: 640px;
+      min-width: 0;
 }
 
 .badge {
@@ -875,6 +886,12 @@ textarea {
       align-items: start;
 }
 
+.footer-brand,
+.footer-links,
+.footer-contact {
+      min-width: 0;
+}
+
 .footer-brand p,
 .footer-contact p {
       margin: 0.75rem 0 0;
@@ -886,6 +903,17 @@ textarea {
 .hero-contact a {
       color: inherit;
       text-decoration: none;
+}
+
+.footer-contact p,
+.footer-contact a,
+.hero-contact span,
+.hero-contact a,
+.contact-links a,
+.info-card a {
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      word-break: break-word;
 }
 
 .footer-contact a:hover,
@@ -900,6 +928,8 @@ textarea {
 }
 
 .footer-links a {
+      display: inline-flex;
+      align-items: center;
       color: var(--text);
       transition: color 0.2s ease;
 }
@@ -1138,6 +1168,10 @@ textarea {
 
 @media (max-width: 980px) {
 
+      .topbar {
+            padding: 0.85rem 0;
+      }
+
       .hero-grid,
       .section-grid,
       .project-grid,
@@ -1170,6 +1204,7 @@ textarea {
 
       .footer-grid {
             grid-template-columns: 1fr;
+            gap: 1.25rem;
       }
 
       .project-filter {
@@ -1180,28 +1215,52 @@ textarea {
             padding-top: 3rem;
       }
 
+      .navbar {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            align-items: center;
+            gap: 0.6rem 1rem;
+      }
+
+      .brand {
+            min-width: 0;
+            font-size: 1.2rem;
+      }
+
+      .page-title {
+            display: block;
+            margin-left: 0;
+            color: var(--muted);
+      }
+
       .nav-menu {
             position: fixed;
             top: 0;
             bottom: 0;
             left: 0;
-            right: 0;
+            width: min(82vw, 340px);
             background: rgba(8, 12, 28, 1);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 0;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0 24px 24px 0;
             backdrop-filter: blur(18px);
             flex-direction: column;
+            align-items: stretch;
             padding: 1rem;
             gap: 0.75rem;
-            display: none;
+            display: flex;
+            overflow-y: auto;
             box-shadow: 0 32px 80px rgba(0, 0, 0, 0.2);
             z-index: 1001;
+            opacity: 0;
             pointer-events: none;
+            transform: translateX(-110%);
+            transition: transform 0.28s ease, opacity 0.28s ease;
       }
 
       .nav-menu.show {
-            display: flex;
+            opacity: 1;
             pointer-events: auto;
+            transform: translateX(0);
       }
 
       .nav-overlay {
@@ -1222,10 +1281,14 @@ textarea {
 
       .nav-toggle {
             display: flex;
+            justify-self: end;
       }
 
       .nav-close {
             display: block;
+            margin-left: auto;
+            font-size: 2rem;
+            line-height: 1;
       }
 
       .search-form,
@@ -1251,37 +1314,37 @@ textarea {
             padding: 0.95rem 1rem;
             border-radius: 18px;
             background: rgba(255, 255, 255, 0.03);
-            text-align: center;
+            text-align: left;
             pointer-events: auto;
+      }
+
+      .nav-link::after {
+            display: none;
+      }
+
+      .hero-actions,
+      .social-links,
+      .contact-links {
+            width: 100%;
+      }
+
+      .social-icon,
+      .contact-links a {
+            width: 100%;
+            justify-content: center;
+      }
+
+      .project-body,
+      .achievement-body,
+      .github-work-card {
+            padding: 1.4rem;
       }
 }
 
 @media (max-width: 760px) {
       .navbar {
-            flex-wrap: wrap;
-            align-items: flex-start;
-      }
-
-      .search-form {
-            width: 100%;
-            margin: 0.75rem 0 0;
-      }
-
-      .font-controls {
-            margin-left: 0;
-            margin-top: 0.75rem;
-      }
-
-      .search-form input {
-            max-width: 100%;
-      }
-
-      .search-feedback-container {
-            display: block;
-      }
-
-      .theme-toggle {
-            margin-left: 0;
+            grid-template-columns: minmax(0, 1fr) auto;
+            align-items: start;
       }
 
       .hero-actions .btn,
@@ -1298,7 +1361,47 @@ textarea {
             width: 100%;
       }
 
+      .hero-copy h1 {
+            font-size: clamp(2.3rem, 11vw, 3.5rem);
+      }
+
+      .hero-contact {
+            gap: 0.9rem;
+      }
+
+      .footer-contact,
+      .footer-links,
+      .footer-brand {
+            width: 100%;
+      }
+
+      .site-footer {
+            padding: 2.5rem 0 1.6rem;
+      }
+
+      .site-footer .footer-grid {
+            gap: 1rem;
+      }
+
+      .footer-contact p,
+      .footer-links a {
+            text-align: left;
+      }
+
+      .footer-links {
+            gap: 0.8rem;
+      }
+
+      .footer-copy {
+            margin-top: 1.4rem;
+            padding: 0 0.5rem;
+      }
+
       .project-thumb {
+            height: 180px;
+      }
+
+      .achievement-thumb {
             height: 180px;
       }
 
@@ -1393,8 +1496,24 @@ textarea {
 }
 
 @media (max-width: 520px) {
+      .container {
+            width: min(100%, calc(100% - 1rem));
+      }
+
+      .topbar {
+            padding: 0.75rem 0;
+      }
+
+      .brand {
+            font-size: 1.05rem;
+      }
+
+      .page-title {
+            font-size: 0.9rem;
+      }
+
       .hero-copy h1 {
-            font-size: 2.8rem;
+            font-size: clamp(2rem, 12vw, 2.7rem);
       }
 
       .hero-actions,
@@ -1406,6 +1525,23 @@ textarea {
             font-size: 0.92rem;
       }
 
+      .footer-contact p,
+      .footer-contact a,
+      .hero-contact span,
+      .hero-contact a {
+            font-size: 0.92rem;
+      }
+
+      .footer-brand p,
+      .footer-contact p,
+      .footer-links a {
+            line-height: 1.7;
+      }
+
+      .hero-section {
+            padding: 2rem 0 4rem;
+      }
+
       .btn,
       .btn-sm {
             width: 100%;
@@ -1414,6 +1550,10 @@ textarea {
       .footer-grid,
       .project-grid {
             grid-template-columns: 1fr;
+      }
+
+      .site-footer .footer-grid {
+            gap: 0.9rem;
       }
 
       .font-controls {
@@ -1437,6 +1577,21 @@ textarea {
       .about-stats {
             flex-direction: column;
       }
+
+      .profile-card,
+      .contact-info,
+      .contact-form,
+      .skills-panel,
+      .about-extra,
+      .project-body,
+      .achievement-body,
+      .github-work-card {
+            padding: 1.2rem;
+      }
+
+      .nav-menu {
+            width: min(88vw, 320px);
+      }
 }
 
 body.dark {
@@ -1446,4 +1601,16 @@ body.dark {
       --text: #e8edff;
       --muted: #abb6dc;
       --border: rgba(255, 255, 255, 0.08);
+}
+
+.hero-card,
+.section-intro,
+.skills-panel,
+.about-extra,
+.contact-info,
+.contact-form,
+.project-card,
+.achievement-card,
+.github-work-card {
+      min-width: 0;
 }
