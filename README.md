@@ -43,7 +43,7 @@ I am passionate about building real-world applications and continuously improvin
 
 ## 🔗 Live Demo
 
-👉 [View Portfolio](https://your-portfolio-link.com)
+👉 [View Portfolio](https://wazmiali.github.io/Portfolio-Wazmi-Ali/)
 
 ---
 
