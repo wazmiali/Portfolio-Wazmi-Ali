@@ -70,6 +70,31 @@ body.light .chat-input-row input {
       border-color: rgba(32, 42, 72, 0.15);
 }
 
+body.light .chat-panel {
+      background: rgba(255, 255, 255, 0.98);
+      border-color: rgba(32, 42, 72, 0.12);
+      color: var(--text);
+}
+
+body.light .chat-header,
+body.light .chat-input-row {
+      background: rgba(17, 41, 97, 0.04);
+}
+
+body.light .chat-message.bot {
+      background: rgba(17, 41, 97, 0.08);
+      color: var(--text);
+}
+
+body.light .chat-message.user {
+      background: rgba(35, 213, 171, 0.18);
+      color: #142033;
+}
+
+body.light .chat-input-row button {
+      color: #0b1730;
+}
+
 body.light .hero-bg {
       background: radial-gradient(circle at top center, rgba(108, 99, 255, 0.12), transparent 35%),
             radial-gradient(circle at bottom left, rgba(35, 213, 171, 0.12), transparent 30%);
@@ -1062,6 +1087,7 @@ textarea {
       border-radius: 28px;
       overflow: hidden;
       box-shadow: var(--shadow);
+      color: var(--text);
 }
 
 .chat-header {
@@ -1090,6 +1116,7 @@ textarea {
       gap: 0.85rem;
       max-height: 320px;
       overflow-y: auto;
+      background: transparent;
 }
 
 .chat-message {
@@ -1123,6 +1150,12 @@ textarea {
       border-radius: 18px;
       border: 1px solid rgba(255, 255, 255, 0.12);
       background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+      outline: none;
+}
+
+.chat-input-row input::placeholder {
+      color: var(--muted);
 }
 
 .chat-input-row button {

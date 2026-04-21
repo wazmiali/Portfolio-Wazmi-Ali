@@ -52,6 +52,7 @@ function closeNav() {
   setBodyScrollLock(false);
 }
 
+
 function openNav() {
   if (!navMenu || !navOverlay) return;
   navMenu.classList.add("show");
@@ -510,145 +511,101 @@ function getChatResponse(message) {
     .replace(/[?.!]/g, "")
     .replace(/[^a-z0-9\s]/g, "")
     .replace(/\s+/g, " ");
+  const hasAny = (...phrases) =>
+    phrases.some((phrase) => normalized.includes(phrase));
 
-  const qaMap = new Map([
-    ["who are you", "I am Wazmi Ali, a software engineering student."],
-    ["what do you study", "I study B.Tech in AI & ML."],
-    ["what is your goal", "I want to become a skilled software engineer."],
-    ["how many years have you studied", "6"],
-    ["what languages do you know", "I know Python, C++, Java, and PHP."],
-    ["what is your main skill", "Web development and problem solving."],
-    ["what is your github", "github.com/wazmiali"],
-    ["what do you upload on github", "Projects, code, and practice work."],
-    ["what is your best project", "Heart Disease Prediction System."],
-    ["what tech did you use there", "Python, Flask, and Machine Learning."],
-    ["do you know web design", "Yes, I use HTML, CSS, and JavaScript."],
-    ["do you know backend", "Yes, I use PHP and MySQL."],
-    ["what tools do you use", "VS Code, Jupyter, and IntelliJ."],
-    ["what is cloud computing", "It is storing and running data online."],
-    ["do you use aws", "Yes, I use EC2, S3, and IAM."],
-    ["what is dsa", "Data Structures and Algorithms."],
-    ["why is dsa important", "It helps solve problems faster."],
-    ["what is your strength", "Quick learning and hard work."],
-    ["what is your weakness", "I try to improve my time management."],
-    ["do you work in a team", "Yes, I like team projects."],
-    ["what is your experience", "I worked as a web development intern."],
-    [
-      "do you have certificates",
-      "Yes, I have 4 professional certificates: CCNA Introduction to Networks, Networking Devices and Initial Configuration, Introduction to Cybersecurity, and Python Essentials 1, all from Cisco Networking Academy.",
-    ],
-    [
-      "what are your achievements",
-      "I have certificates in CCNA Networking, Cybersecurity, and Python from Cisco Networking Academy, plus various project achievements.",
-    ],
-    [
-      "how many certificates do you have",
-      "I have 4 certificates from Cisco Networking Academy.",
-    ],
-    [
-      "what did you do in internship",
-      "Built responsive websites and clean code.",
-    ],
-    ["what is responsive design", "It works on mobile and desktop screens."],
-    ["what is your hobby", "Coding and learning new tech."],
-    ["do you like ai", "Yes, I am learning AI and ML."],
-    ["what is your future plan", "Work on real-world software projects."],
-    ["what is your database skill", "I use MySQL for data storage."],
-    ["what is your ui skill", "I use Bootstrap and Tailwind CSS."],
-    ["what is your project style", "Clean, simple, and user-friendly."],
-    ["why should we hire you", "I am dedicated and always learning."],
-    ["how can we contact you", "Email or GitHub profile."],
-    ["what is your full name", "My full name is Wazmi Ali."],
-    ["where are you from", "I am from India."],
-    ["what is your current cgpa", "My CGPA is 7.7."],
-    ["what is your diploma cgpa", "My diploma CGPA is 8.31."],
-    ["what is your learning style", "I learn by practice and projects."],
-    ["do you like coding daily", "Yes, I practice coding every day."],
-    ["what is your favorite language", "I like Python and Java."],
-    ["what is python used for", "It is used for web and AI projects."],
-    ["what is java used for", "It is used for apps and backend."],
-    ["what is c++ used for", "It is used for DSA and logic building."],
-    ["what is your frontend skill", "HTML, CSS, JavaScript."],
-    ["what is your backend skill", "PHP and MySQL."],
-    ["what is your ml skill", "Basic machine learning models."],
-    ["what is your data skill", "Data analysis using Pandas."],
-    ["what is numpy", "It is used for numerical computing."],
-    ["what is pandas", "It is used for data handling."],
-    ["what is matplotlib", "It is used for data charts."],
-    ["what is seaborn", "It is used for advanced graphs."],
-    ["what is your project goal", "Solve real-world problems."],
-    ["what is your coding level", "Beginner to intermediate."],
-    ["do you know git", "Yes, I use Git for version control."],
-    ["what is github", "It is a platform to store code."],
-    ["do you write clean code", "Yes, I follow clean coding rules."],
-    ["what is debugging", "Finding and fixing errors."],
-    ["what is testing", "Checking code for correctness."],
-    ["what is your biggest project", "Hospital Management System."],
-    ["what is your web project", "Smart Waste Management Website."],
-    ["do you use frameworks", "Yes, I use Flask and Bootstrap."],
-    ["what is flask", "It is a Python web framework."],
-    ["what motivates you", "Learning and building new things."],
-    [
-      "what kind of developer are you",
-      "I am a full-stack and ML beginner developer.",
-    ],
-    [
-      "can you show your projects",
-      "Yes, you can explore them in my portfolio.",
-    ],
-    ["what problem do you solve", "I build solutions using web and data."],
-    ["are you good for internships", "Yes, I am open and ready to learn."],
-    ["why should i check your github", "It shows my real coding work."],
-    ["do you build real projects", "Yes, all my projects solve real problems."],
-    ["can you work on live projects", "Yes, I am ready for real-world work."],
-    [
-      "are you a beginner or expert",
-      "I am improving from beginner to intermediate.",
-    ],
-    ["how fast do you learn new tech", "I learn quickly with practice."],
-    ["can you work in a team", "Yes, I enjoy teamwork."],
-    ["do you take freelance work", "Yes, I am open to opportunities."],
-    ["what makes you different", "I focus on learning and building."],
-    ["do you only code or also design", "I do both coding and UI design."],
-    ["can you build a full website", "Yes, from frontend to backend."],
-    ["what kind of apps can you build", "Web apps and basic ML apps."],
-    ["are your projects responsive", "Yes, I try to make them responsive."],
-    ["do you fix bugs", "Yes, debugging is part of my work."],
-    ["how do you start a project", "I plan, design, then code step by step."],
-    ["do you follow best practices", "Yes, I write clean and simple code."],
-    ["can you explain your code", "Yes, I can explain it clearly."],
-    ["what tools do you use daily", "VS Code, GitHub, and browser tools."],
-    ["do you know databases well", "Yes, I work with MySQL."],
-    ["can you handle data projects", "Yes, I use Python and Pandas."],
-    ["do you know ai basics", "Yes, I am learning ML models."],
-    ["what are you learning now", "DSA, AI, and full-stack development."],
-    [
-      "how do you improve your skills",
-      "By coding daily and building projects.",
-    ],
-    ["are you ready for a job", "Yes, I am preparing actively."],
-    ["can i contact you easily", "Yes, via email or GitHub."],
-    ["do you update your projects", "Yes, I keep improving them."],
-    ["what is your long term goal", "To become a strong software engineer."],
-  ]);
-
-  if (qaMap.has(normalized)) {
-    return qaMap.get(normalized);
+  if (hasAny("hello", "hi", "hey")) {
+    return "Hi, I can answer questions about Wazmi Ali's portfolio, skills, projects, education, resume, and contact details.";
   }
 
-  for (const [question, answer] of qaMap.entries()) {
-    if (normalized.includes(question)) {
-      return answer;
-    }
+  if (hasAny("who are you", "full name", "your name")) {
+    return "Wazmi Ali is an AI and ML student focused on full-stack development, cloud fundamentals, and practical software projects.";
   }
 
-  if (normalized.includes("github")) {
-    return "You can find my work on github.com/wazmiali.";
+  if (hasAny("study", "education", "college", "degree", "btech", "diploma")) {
+    return "Wazmi Ali is pursuing B.Tech in AI and ML at GL Bajaj Institute of Technology and Management, Greater Noida, and completed a diploma in CSE from Quantum University, Roorkee.";
   }
-  if (normalized.includes("contact")) {
-    return "You can contact me by email or through my GitHub profile.";
+
+  if (hasAny("cgpa", "grade", "score")) {
+    return "The portfolio mentions a current CGPA of 7.7 and a diploma CGPA of 8.31.";
   }
-  return "I can help with portfolio details, skills, project highlights, or contact info. Ask anything and I will answer.";
+
+  if (hasAny("skill", "skills", "tech stack", "technology", "technologies")) {
+    return "Main skills include HTML, CSS, JavaScript, Python, Java, React, Flask, MySQL, data handling with Pandas, and AI/ML fundamentals.";
+  }
+
+  if (hasAny("frontend", "front end", "ui", "design")) {
+    return "Frontend skills include HTML, CSS, JavaScript, responsive design, and UI-focused portfolio work.";
+  }
+
+  if (hasAny("backend", "back end", "database", "mysql", "php")) {
+    return "Backend experience includes PHP, MySQL, Flask, and building web applications that connect frontend interfaces with data and logic.";
+  }
+
+  if (hasAny("ai", "ml", "machine learning", "data")) {
+    return "Wazmi Ali is focused on AI and ML learning, with experience in Python, Pandas, and machine-learning-based project work such as the Heart Disease Predictor.";
+  }
+
+  if (hasAny("project", "projects", "best project", "featured work")) {
+    return "Featured projects include the Heart Disease Predictor, Hospital Management System, and Smart Waste Management Website, covering web development and AI-focused problem solving.";
+  }
+
+  if (
+    hasAny(
+      "heart disease",
+      "predictor",
+      "prediction system",
+      "flask project",
+    )
+  ) {
+    return "The Heart Disease Predictor is a Flask and machine learning project that estimates cardiovascular risk using patient data, preprocessing, and model inference.";
+  }
+
+  if (hasAny("certificate", "certificates", "achievement", "achievements")) {
+    return "The portfolio highlights 4 Cisco Networking Academy certificates: CCNA Introduction to Networks, Networking Devices and Initial Configuration, Introduction to Cybersecurity, and Python Essentials 1.";
+  }
+
+  if (hasAny("experience", "internship", "intern")) {
+    return "The portfolio says Wazmi Ali has web development internship experience and has worked on responsive websites with clean code.";
+  }
+
+  if (hasAny("resume", "cv", "download resume")) {
+    return "You can download the resume from the Download Resume button on the home page.";
+  }
+
+  if (hasAny("github", "github profile", "source code")) {
+    return "GitHub profile: github.com/wazmiali. It includes project code, practice work, and portfolio-related repositories.";
+  }
+
+  if (hasAny("linkedin")) {
+    return "LinkedIn is available from the social links in the portfolio header and contact sections.";
+  }
+
+  if (hasAny("contact", "email", "phone", "reach", "hire")) {
+    return "You can contact Wazmi Ali by email at wazmiali9058@gmail.com, by phone at +91 9058652406, or through GitHub and LinkedIn.";
+  }
+
+  if (hasAny("location", "where are you from", "where do you live")) {
+    return "The portfolio lists Greater Noida, Uttar Pradesh, India as the location.";
+  }
+
+  if (hasAny("goal", "future plan", "career goal")) {
+    return "The long-term goal is to become a strong software engineer and work on real-world software and AI projects.";
+  }
+
+  if (hasAny("strength", "strengths")) {
+    return "Highlighted strengths include quick learning, problem solving, clean code, and consistent project-based improvement.";
+  }
+
+  if (hasAny("hobby", "hobbies", "motivate", "motivation")) {
+    return "Wazmi Ali enjoys coding, learning new technologies, and improving through hands-on projects.";
+  }
+
+  if (hasAny("team", "teamwork", "freelance", "job", "opportunity")) {
+    return "The portfolio presents Wazmi Ali as open to teamwork, internships, freelance work, and real-world project opportunities.";
+  }
+
+  return "I can help with resume, education, skills, projects, certificates, contact details, GitHub, and career goals. Try asking about skills, projects, education, or contact.";
 }
 
 window.addEventListener("click", (event) => {
