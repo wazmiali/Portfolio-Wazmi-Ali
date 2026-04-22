@@ -52,7 +52,6 @@ function closeNav() {
   setBodyScrollLock(false);
 }
 
-
 function openNav() {
   if (!navMenu || !navOverlay) return;
   navMenu.classList.add("show");
@@ -518,6 +517,38 @@ function getChatResponse(message) {
     return "Hi, I can answer questions about Wazmi Ali's portfolio, skills, projects, education, resume, and contact details.";
   }
 
+  ////////////////////////////////////////////////////////////////
+
+  if (hasAny("help", "what can you do", "how to use")) {
+    return "You can ask about Wazmi Ali's skills, projects, education, certificates, contact info, GitHub, LinkedIn, and career goals. Try asking about skills or projects!";
+  }
+
+  if (hasAny("about", "summary", "bio", "introduction", "wazmi")) {
+    return "Wazmi Ali is a passionate AI and ML student with a strong focus on full-stack development, cloud fundamentals, and practical software projects. With a background in B.Tech and a diploma in CSE, Wazmi has built a diverse skill set that includes web development, data handling, and machine learning. Through hands-on projects like the Heart Disease Predictor and responsive web applications, Wazmi demonstrates a commitment to learning and applying technology to solve real-world problems.";
+  }
+
+  if (hasAny("background", "experience", "journey", "story")) {
+    return "Wazmi Ali's journey in technology began with a diploma in Computer Science and Engineering, followed by pursuing a B.Tech in AI and ML. Along the way, Wazmi has gained experience through web development internships, built projects that combine frontend and backend skills, and earned multiple Cisco Networking Academy certificates. This path reflects a dedication to continuous learning and practical application of skills in software development and AI.";
+  }
+
+  if (hasAny("strengths", "qualities", "attributes", "characteristics")) {
+    return "Wazmi Ali's strengths include quick learning, problem-solving, clean code practices, and a consistent focus on project-based improvement. These qualities enable Wazmi to adapt to new technologies, tackle challenges effectively, and produce high-quality work in both web development and AI/ML domains.";
+  }
+
+  if (hasAny("motivation", "inspiration", "passion", "drive")) {
+    return "Wazmi Ali is motivated by a passion for coding, learning new technologies, and improving through hands-on projects. The drive to solve real-world problems and create impactful software solutions fuels Wazmi's dedication to growth in the fields of AI, ML, and full-stack development.";
+  }
+
+  if (hasAny("goals", "future plans", "career aspirations", "objectives")) {
+    return "Wazmi Ali's long-term goal is to become a strong software engineer and work on real-world software and AI projects. This includes contributing to innovative applications, collaborating with teams, and continuously learning to stay at the forefront of technology.";
+  }
+
+  if (hasAny("teamwork", "collaboration", "freelance", "job", "opportunity")) {
+    return "Wazmi Ali is open to teamwork, internships, freelance work, and real-world project opportunities. With a collaborative mindset and a focus on learning, Wazmi is eager to contribute to projects that allow for growth and the application of skills in software development and AI.";
+  }
+
+  /////////////////////////////////////////////////////////////////
+
   if (hasAny("who are you", "full name", "your name")) {
     return "Wazmi Ali is an AI and ML student focused on full-stack development, cloud fundamentals, and practical software projects.";
   }
@@ -551,12 +582,7 @@ function getChatResponse(message) {
   }
 
   if (
-    hasAny(
-      "heart disease",
-      "predictor",
-      "prediction system",
-      "flask project",
-    )
+    hasAny("heart disease", "predictor", "prediction system", "flask project")
   ) {
     return "The Heart Disease Predictor is a Flask and machine learning project that estimates cardiovascular risk using patient data, preprocessing, and model inference.";
   }
@@ -664,8 +690,7 @@ if (window.location.href.includes("achievements.html")) {
     });
 
     prevBtn.addEventListener("click", () => {
-      currentIndex =
-        (currentIndex - 1 + certImages.length) % certImages.length;
+      currentIndex = (currentIndex - 1 + certImages.length) % certImages.length;
       modalImg.src = certImages[currentIndex];
     });
 
