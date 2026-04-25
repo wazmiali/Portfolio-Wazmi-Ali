@@ -608,7 +608,7 @@ function getChatResponse(message) {
   }
 
   if (hasAny("contact", "email", "phone", "reach", "hire")) {
-    return "You can contact Wazmi Ali by email at wazmiali9058@gmail.com, by phone at +91 9058652406, or through GitHub and LinkedIn.";
+    return "You can contact Wazmi Ali by email at wazmiali9058@gmail.com, by phone at +91___________, or through GitHub and LinkedIn.";
   }
 
   if (hasAny("location", "where are you from", "where do you live")) {
