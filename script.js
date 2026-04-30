@@ -671,6 +671,7 @@ if (window.location.href.includes("achievements.html")) {
     "Image/Certificates/network.jpg",
     "Image/Certificates/cyber.jpg",
     "Image/Certificates/python.jpg",
+    "Image/Certificates/python2.jpg",
   ];
 
   let currentIndex = 0;
