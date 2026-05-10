@@ -547,6 +547,14 @@ function getChatResponse(message) {
     return "Wazmi Ali is open to teamwork, internships, freelance work, and real-world project opportunities. With a collaborative mindset and a focus on learning, Wazmi is eager to contribute to projects that allow for growth and the application of skills in software development and AI.";
   }
 
+  if (hasAny("contact", "email", "phone", "reach", "hire")) {
+    return "You can contact Wazmi Ali by email at wazmiali9058@gmail.com";
+  }
+
+  if (hasAny("Heart Disease Predictor", "flask project", "machine learning project", "Dataset Visualizer")) {   
+    return "The Heart Disease Predictor is a machine learning project built with Flask, demonstrating Wazmi Ali's ability to apply AI/ML concepts to real-world problems. It uses patient data to estimate cardiovascular risk, showcasing skills in data preprocessing, model inference, and web application development.";
+  }
+
   /////////////////////////////////////////////////////////////////
 
   if (hasAny("who are you", "full name", "your name")) {
