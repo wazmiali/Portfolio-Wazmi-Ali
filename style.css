@@ -1325,12 +1325,13 @@ textarea {
             line-height: 1;
       }
 
-      .search-form,
+      /* .search-form,
       .font-controls,
       .theme-toggle,
       .nav-toggle {
             width: auto;
-      }
+            
+      } */
 
       .search-form,
       .font-controls,
