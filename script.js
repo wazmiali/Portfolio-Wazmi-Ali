@@ -553,7 +553,16 @@ function getChatResponse(message) {
 
   if (hasAny("Heart Disease Predictor", "flask project", "machine learning project", "Dataset Visualizer")) {   
     return "The Heart Disease Predictor is a machine learning project built with Flask, demonstrating Wazmi Ali's ability to apply AI/ML concepts to real-world problems. It uses patient data to estimate cardiovascular risk, showcasing skills in data preprocessing, model inference, and web application development.";
+
   }
+
+  if (hasAny("certificates", "achievements", "accomplishments")) {
+    return "Wazmi Ali has earned 4 Cisco Networking Academy certificates: CCNA Introduction to Networks, Networking Devices and Initial Configuration, Introduction to Cybersecurity, and Python Essentials 1. These certifications reflect a commitment to learning foundational networking concepts, cybersecurity principles, and programming skills.";
+  }
+
+  if(hasAny("projects", "best project", "featured work")) {
+    return "Featured projects include the Heart Disease Predictor, Hospital Management System, and Smart Waste Management Website. These projects demonstrate a range of skills from web development to AI-focused problem solving, highlighting Wazmi Ali's ability to create practical solutions using technology.";
+  } 
 
   /////////////////////////////////////////////////////////////////
 
