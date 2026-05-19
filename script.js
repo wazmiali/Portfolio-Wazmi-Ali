@@ -564,6 +564,34 @@ function getChatResponse(message) {
     return "Featured projects include the Heart Disease Predictor, Hospital Management System, and Smart Waste Management Website. These projects demonstrate a range of skills from web development to AI-focused problem solving, highlighting Wazmi Ali's ability to create practical solutions using technology.";
   } 
 
+  if (hasAny("skills", "tech stack", "technology", "technologies")) {
+    return "Wazmi Ali's main skills include HTML, CSS, JavaScript, Python, Java, React, Flask, MySQL, data handling with Pandas, and AI/ML fundamentals. This diverse skill set enables Wazmi to work on full-stack development projects as well as AI-focused applications.";
+  } 
+
+  if (hasAny("education", "study", "college", "degree", "btech", "diploma")) {
+    return "Wazmi Ali is pursuing a B.Tech in AI and ML at GL Bajaj Institute of Technology and Management, Greater Noida, and has completed a diploma in Computer Science and Engineering from Quantum University, Roorkee. This educational background provides a strong foundation in both theoretical and practical aspects of computer science, AI, and machine learning.";
+  } 
+
+  if (hasAny("resume", "cv", "download resume")) {
+    return "You can download Wazmi Ali's resume from the Download Resume button on the home page. It provides a comprehensive overview of education, skills, projects, certificates, and contact information.";
+  } 
+
+  if (hasAny("github", "github profile", "source code")) {
+    return "Wazmi Ali's GitHub profile is github.com/wazmiali. It includes project code, practice work, and portfolio-related repositories that showcase skills in web development, AI/ML, and software engineering.";
+  }   
+
+  if (hasAny("linkedin", "linkedin profile")) {
+    return "Wazmi Ali's LinkedIn profile can be accessed from the social links in the portfolio header and contact sections. It provides a professional overview of experience, skills, and projects.";
+  } 
+  if (hasAny("location", "where are you from", "where do you live")) {
+    return "Wazmi Ali is based in Greater Noida, Uttar Pradesh, India.";
+  } 
+
+  if (hasAny("experience", "internship", "intern")) {
+    return "Wazmi Ali has web development internship experience, working on responsive websites with clean code. This practical experience complements academic learning and demonstrates the ability to apply skills in real-world settings.";
+  } 
+
+  
   /////////////////////////////////////////////////////////////////
 
   if (hasAny("who are you", "full name", "your name")) {
