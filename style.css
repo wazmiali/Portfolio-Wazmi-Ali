@@ -970,6 +970,33 @@ textarea {
       text-align: center;
 }
 
+.social-icons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+}
+
+.social-icons a {
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.06);
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+      background: #38bdf8;
+      transform: translateY(-5px);
+}
+
+
+
 .contact-links {
       display: flex;
       gap: 0.85rem;
