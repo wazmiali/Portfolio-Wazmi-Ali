@@ -88,3 +88,4 @@ This project is open-source and available under the MIT License.
 ---
 
 If you want, I can **customize this README based on your actual repo content (projects, screenshots, live link)** so it becomes even more impressive for placements or companies like Microsoft.
+WazmiAliResume.pdf
